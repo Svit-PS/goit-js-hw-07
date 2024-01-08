@@ -11,10 +11,11 @@ function createGallery(arr) {
   const str = arr
     .map(({ preview: url, description: alt, original }) => {
       return `<li class="gallery__item">
-          <a class="gallery__link">
+          <a class="gallery__link"
+          href="${original}"
+          onclick="return false;">
             <img
               class="gallery__image"
-              href="${original}"
               src="${url}"
               data-source="${original}"
               alt="${alt}"

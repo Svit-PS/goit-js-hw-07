@@ -8,10 +8,11 @@ function createGallery(arr) {
   const str = arr
     .map(({ preview: url, description: alt, original }) => {
       return `<li class="gallery__item">
-          <a class="gallery__link">
+          <a class="gallery__link"
+          href="${original}"
+          onclick="return false;">
             <img
               class="gallery__image"
-               href="${original}"
               src="${url}"
               alt="${alt}"
             />
@@ -22,3 +23,10 @@ function createGallery(arr) {
 
   galleryEl.insertAdjacentHTML("beforeend", str);
 }
+
+let lightbox = new SimpleLightbox(".gallery__link", {
+  captionsData: "alt",
+  captionDelay: 250,
+  captionClass: "captionPosition",
+});
+console.log("lightbox: ", lightbox);

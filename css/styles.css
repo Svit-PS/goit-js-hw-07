@@ -42,3 +42,8 @@
 .gallery__link:hover {
   cursor: zoom-in;
 }
+
+.captionPosition {
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
